@@ -1,4 +1,4 @@
-import {keys, mapValues, reduce} from 'lodash';
+import {keys, map, mapValues, reduce} from 'lodash';
 
 const obj = {
     a: 12,
@@ -6,13 +6,27 @@ const obj = {
     c: 34
 };
 
-const reduceResult1 = reduce(keys(obj), (result, key) => {
+const res1 = reduce(keys(obj), (result, key) => {
     const value = obj[key];
     result[key] = value * 2;
     return result;
 }, {});
 
-const reduceResult2 = mapValues(obj, value => value * 2);
+const res2 = mapValues(obj, value => value * 2);
 
-console.log(1, reduceResult1);
-console.log(2, reduceResult2);
+const objs = [
+    {
+        id: 123123,
+        name: 'qweqweqw'
+    },
+    {
+        id: 52334224,
+        name: 'qweqwcvever'
+    }
+];
+
+const res3 = map(objs, 'id');
+
+console.log(1, res1);
+console.log(2, res2);
+console.log(3, res3);
