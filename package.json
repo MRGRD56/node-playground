@@ -1,6 +1,9 @@
 {
   "name": "node-playground",
   "version": "1.0.0",
+  "scripts": {
+    "start": "nodemon index.ts"
+  },
   "dependencies": {
     "lodash": "^4.17.21",
     "axios": "^0.26.1"
