@@ -2,11 +2,12 @@
   "name": "node-playground",
   "version": "1.0.0",
   "scripts": {
-    "start": "nodemon index.ts"
+    "start": "nodemon index3.ts"
   },
   "dependencies": {
     "lodash": "^4.17.21",
-    "axios": "^0.26.1"
+    "axios": "^0.26.1",
+    "dotenv": "^16.0.0"
   },
   "devDependencies": {
     "typescript": "^4.6.2",

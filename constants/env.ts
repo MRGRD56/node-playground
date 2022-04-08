@@ -1,0 +1,1 @@
+export const HH_PEOPLEDIGITS_COOKIE = process.env['HH_PEOPLEDIGITS_COOKIE'];
