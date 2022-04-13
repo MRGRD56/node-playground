@@ -1,6 +1,6 @@
 import * as hhTrudMappingJson from './data/GITIGNORE__index4_hhTrudMapping.json';
 import * as trudAllRegionsJson from './data/GITIGNORE__index4_trudAllRegions.json';
-import {findKey} from 'lodash';
+import {chain, findKey} from 'lodash';
 
 interface HhTrudMappingInEntry {
     hhId: string;
@@ -29,9 +29,14 @@ const regionsOut = hhTrudMapping.map(value => {
     } as HhTrudMappingOutEntry;
 });
 
-const regionsMapOut = regionsOut.reduce((result, {hhId, trudId}) => {
-    result[hhId] = trudId;
-    return result;
-}, {} as Record<string, string>);
+// const regionsMapOut = regionsOut.reduce((result, {hhId, trudId}) => {
+//     result[hhId] = trudId;
+//     return result;
+// }, {} as Record<string, string>);
+
+const regionsMapOut = chain(regionsOut)
+    .keyBy('hhId')
+    .mapValues('trudId')
+    .value();
 
 console.log(JSON.stringify(regionsMapOut, undefined, 2));
