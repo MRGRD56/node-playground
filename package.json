@@ -2,7 +2,7 @@
   "name": "node-playground",
   "version": "1.0.0",
   "scripts": {
-    "start": "nodemon index4.ts"
+    "start": "nodemon index6.ts"
   },
   "dependencies": {
     "lodash": "^4.17.21",
